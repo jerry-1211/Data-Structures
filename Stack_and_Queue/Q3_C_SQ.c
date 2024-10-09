@@ -103,8 +103,30 @@ int main()
 
 int isStackPairwiseConsecutive(Stack *s)
 {
-  /* add your code here */
+	while(1){
+		int item1 = pop(s);
+		int item2 = pop(s);
+
+		if(item1!=INT_MIN && item2!=INT_MIN){
+			if(item1 < item2){
+				int temp = item1; 
+				item1 = item2;
+				item2 = temp;
+			}
+			if(item1-item2==1){
+				continue;
+			}else{
+				return 0;
+				}
+		}else if(item1==INT_MIN && item2==INT_MIN){
+				return 1;
+		}
+		else{
+			return 0 ;
+		}
+	}
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////
 
